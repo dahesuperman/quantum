@@ -1,4 +1,4 @@
-// Copyright (c) nano Authors. All Rights Reserved.
+// Copyright (c) quantum Authors. All Rights Reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,7 @@ import (
 	"github.com/dahesuperman/quantum/internal/log"
 )
 
-// cluster represents a nano cluster, which contains a bunch of nano nodes
+// cluster represents a quantum cluster, which contains a bunch of quantum nodes
 // and each of them provide a group of different services. All services requests
 // from client will send to gate firstly and be forwarded to appropriate node.
 type cluster struct {

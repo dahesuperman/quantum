@@ -1,4 +1,4 @@
-// Copyright (c) nano Authors. All Rights Reserved.
+// Copyright (c) quantum Authors. All Rights Reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -172,7 +172,7 @@ func NewTimer(interval time.Duration, fn TimerFunc) *Timer {
 // Stop the timer to release associated resources.
 func NewCountTimer(interval time.Duration, count int, fn TimerFunc) *Timer {
 	if fn == nil {
-		panic("nano/timer: nil timer function")
+		panic("quantum/timer: nil timer function")
 	}
 	if interval <= 0 {
 		panic("non-positive interval for NewTimer")
@@ -207,7 +207,7 @@ func NewAfterTimer(duration time.Duration, fn TimerFunc) *Timer {
 // Stop the timer to release associated resources.
 func NewCondTimer(condition TimerCondition, fn TimerFunc) *Timer {
 	if condition == nil {
-		panic("nano/timer: nil condition")
+		panic("quantum/timer: nil condition")
 	}
 
 	t := NewCountTimer(time.Duration(math.MaxInt64), infinite, fn)

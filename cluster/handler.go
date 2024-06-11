@@ -1,4 +1,4 @@
-// Copyright (c) nano Authors. All Rights Reserved.
+// Copyright (c) quantum Authors. All Rights Reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -297,14 +297,14 @@ func (h *LocalHandler) findMembers(service string) []*clusterpb.MemberInfo {
 func (h *LocalHandler) remoteProcess(session *session.Session, msg *message.Message, noCopy bool) {
 	index := strings.LastIndex(msg.Route, ".")
 	if index < 0 {
-		log.Println(fmt.Sprintf("nano/handler: invalid route %s", msg.Route))
+		log.Println(fmt.Sprintf("quantum/handler: invalid route %s", msg.Route))
 		return
 	}
 
 	service := msg.Route[:index]
 	members := h.findMembers(service)
 	if len(members) == 0 {
-		log.Println(fmt.Sprintf("nano/handler: %s not found(forgot registered?)", msg.Route))
+		log.Println(fmt.Sprintf("quantum/handler: %s not found(forgot registered?)", msg.Route))
 		return
 	}
 
@@ -437,7 +437,7 @@ func (h *LocalHandler) localProcess(handler *component.Handler, lastMid uint64, 
 
 	index := strings.LastIndex(msg.Route, ".")
 	if index < 0 {
-		log.Println(fmt.Sprintf("nano/handler: invalid route %s", msg.Route))
+		log.Println(fmt.Sprintf("quantum/handler: invalid route %s", msg.Route))
 		return
 	}
 

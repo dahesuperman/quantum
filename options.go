@@ -1,4 +1,4 @@
-package nano
+package quantum
 
 import (
 	"net/http"
@@ -77,7 +77,7 @@ func WithCheckOriginFunc(fn func(*http.Request) bool) Option {
 	}
 }
 
-// WithDebugMode let 'nano' to run under Debug mode.
+// WithDebugMode let 'quantum' to run under Debug mode.
 func WithDebugMode() Option {
 	return func(_ *cluster.Options) {
 		env.Debug = true

@@ -1,4 +1,4 @@
-// Copyright (c) nano Authors. All Rights Reserved.
+// Copyright (c) quantum Authors. All Rights Reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -56,7 +56,7 @@ type Options struct {
 	TSLKey         string
 }
 
-// Node represents a node in nano cluster, which will contains a group of services.
+// Node represents a node in quantum cluster, which will contains a group of services.
 // All services will register to cluster and messages will be forwarded to the node
 // which provides respective service
 type Node struct {

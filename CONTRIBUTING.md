@@ -10,9 +10,9 @@ your contribution accepted.
 - Read the README.md for build instructions.
 - Play with the project, submit bugs, submit patches!
 
-## Building Nano
+## Building Quantum
 
-Developing Nano requires:
+Developing Quantum requires:
 
 * [Go 1.12](http://golang.org/doc/code.html)
 * An internet connection to download the dependencies

@@ -1,4 +1,4 @@
-### Makefile for nano
+### Makefile for quantum
 GO        := GO111MODULE=on go
 GOBUILD   := GO111MODULE=on CGO_ENABLED=0 $(GO) build
 

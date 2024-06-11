@@ -1,6 +1,6 @@
 # Maintainers
 
-This file lists who are the core maintainers of the nano project.
+This file lists who are the core maintainers of the quantum project.
 
 ## Project Lead
 

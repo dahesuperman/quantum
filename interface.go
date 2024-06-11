@@ -1,4 +1,4 @@
-// Copyright (c) nano Authors. All Rights Reserved.
+// Copyright (c) quantum Authors. All Rights Reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,7 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package nano
+package quantum
 
 import (
 	"fmt"
@@ -40,7 +40,7 @@ import (
 
 var running int32
 
-// VERSION returns current nano version
+// VERSION returns current quantum version
 var VERSION = "0.5.0"
 
 var (
@@ -56,7 +56,7 @@ var (
 // on incoming connections.
 func Listen(addr string, opts ...Option) {
 	if atomic.AddInt32(&running, 1) != 1 {
-		log.Println("Nano has running")
+		log.Println("Quantum has running")
 		return
 	}
 
@@ -100,10 +100,10 @@ func Listen(addr string, opts ...Option) {
 	runtime.CurrentNode = node
 
 	if node.ClientAddr != "" {
-		log.Println(fmt.Sprintf("Startup *Nano gate server* %s, client address: %v, service address: %s",
+		log.Println(fmt.Sprintf("Startup *Quantum gate server* %s, client address: %v, service address: %s",
 			app.name, node.ClientAddr, node.ServiceAddr))
 	} else {
-		log.Println(fmt.Sprintf("Startup *Nano backend server* %s, service address %s",
+		log.Println(fmt.Sprintf("Startup *Quantum backend server* %s, service address %s",
 			app.name, node.ServiceAddr))
 	}
 
@@ -115,10 +115,10 @@ func Listen(addr string, opts ...Option) {
 	case <-env.Die:
 		log.Println("The app will shutdown in a few seconds")
 	case s := <-sg:
-		log.Println("Nano server got signal", s)
+		log.Println("Quantum server got signal", s)
 	}
 
-	log.Println("Nano server is stopping...")
+	log.Println("Quantum server is stopping...")
 
 	node.Shutdown()
 	runtime.CurrentNode = nil
@@ -126,7 +126,7 @@ func Listen(addr string, opts ...Option) {
 	atomic.StoreInt32(&running, 0)
 }
 
-// Shutdown send a signal to let 'nano' shutdown itself.
+// Shutdown send a signal to let 'quantum' shutdown itself.
 func Shutdown() {
 	close(env.Die)
 }
